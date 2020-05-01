@@ -23,7 +23,17 @@ $sudo docker run --name=lstm_docker -d --tty --restart=always -p 5000:5000 regis
 在线验证
 
 ## localhost:5000/api/predict/
+对一个中文字符串情感分析
+
+result常量：
+
++ 0：双性
+
++ 1：正面
++ 2：负面
+
 POST
+
 ```json
 {
   "text": "str"
@@ -36,3 +46,35 @@ Return
 	"text": ""
 }
 ```
+
+## localhost:5000/api/wordcount
+
+对一组字符串进行分词并统计总体词频
+
+POST
+
+```
+{
+    "top": 10, // -1 means all
+    "texts": [
+        "string 1",
+        "string 2",
+        ...
+        "string n"
+    ]
+}
+```
+
+Return
+
+```
+{
+    'cnt': {
+        "word 1": a integer,
+        "word 2": a integer,
+        ...
+        "word n": a integer,
+    }
+}
+```
+
