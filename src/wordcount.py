@@ -10,7 +10,7 @@ def split(data):
     data['cut'] = data['comment'].apply(lambda x: [i for i in jieba.cut(x) if i not in ignoreWords])
     return data
 
-def worldcount(data):
+def wordcount(data):
     words = []
 
     for content in data['cut']:
