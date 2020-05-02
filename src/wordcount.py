@@ -5,6 +5,7 @@ from collections import Counter
 # 加载无意义词典
 with open("./model/ignoreWords.txt") as f:
     ignoreWords = [s[:-1] for s in f.readlines()]
+ignoreWords += [" ", "\n", "\t"]
 
 def split(data):
     data['cut'] = data['comment'].apply(lambda x: [i for i in jieba.cut(x) if i not in ignoreWords])

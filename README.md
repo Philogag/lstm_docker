@@ -73,6 +73,8 @@ POST
     ]
 }
 ```
+> texts 兼容单字符串
+> 即 `"texts": "string"`
 
 Return
 
