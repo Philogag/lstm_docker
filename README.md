@@ -11,11 +11,20 @@
 [![PyYAML](https://img.shields.io/badge/PyYAML-5.3.1-success.svg?style=flat-round)]()
 [![tensorflow](https://img.shields.io/badge/tensorflow-1.13.1-success.svg?style=flat-round)]()
 
-# docker运行
+# docker 运行
 
 ```bash
 $sudo docker run --name=lstm_docker -d --tty --restart=always -p 5000:5000 registry.cn-hangzhou.aliyuncs.com/philogag/lstm_docker
 ```
+
+## 更新 docker 镜像
+```bash
+$sudo docker pull registry.cn-hangzhou.aliyuncs.com/philogag/lstm_docker
+$sudo docker rm -f lstm_docker
+$sudo docker run --name=lstm_docker -d --tty --restart=always -p 5000:5000 registry.cn-hangzhou.aliyuncs.com/philogag/lstm_docker
+```
+
+镜像使用 aliyun 云端构建
 
 # 接口
 

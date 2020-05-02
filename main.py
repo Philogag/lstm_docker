@@ -21,12 +21,14 @@ def post_predict():
 def post_wordcount():
     if request.method == 'POST':
         try:
-            rettop = int(request.form["top"])
+            rettop = int(request.form.get("top"))
+            print(type(rettop))
             if rettop <= 0:
                 rettop = -1
         except KeyError:
             rettop = -1
-        data = request.form["texts"]
+        data = request.form.getlist("texts")
+        # print(data)
         if type(data) is str:
             data = [data]
         
