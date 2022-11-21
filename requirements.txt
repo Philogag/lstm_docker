@@ -4,5 +4,5 @@ Keras
 numpy
 pandas
 PyYAML
-tensorflow==1.13.1
+tensorflow==2.9.3
 Flask
